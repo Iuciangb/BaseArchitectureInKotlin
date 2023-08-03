@@ -86,7 +86,7 @@ class AppConstant {
 
     object Api {
         /**
-         * 獲取已綁定設備列表
+         * 獲取你自己的資料
          */
         const val URL_CHECK_YOURSELF_LIST = "/api/v1/user/devices"
     }

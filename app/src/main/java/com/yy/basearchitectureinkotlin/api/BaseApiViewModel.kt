@@ -15,7 +15,7 @@ import kotlin.coroutines.CoroutineContext
 /**
  * @author YY
  * Created 2022/2/27
- * Description：
+ * Description：ApiViewModel and Api response handle
  */
 open class BaseApiViewModel : ViewModel() {
     private val mJob = Job()

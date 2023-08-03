@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName
  * @author YY
  * Created 2022/2/27
  * Description：API回傳的response格式，針對各自後端格式調整
+ * The response format of the API will be adjusted to the respective backend format.
  */
 class HttpResult<T>(
     @SerializedName("time") val time: Long = 0,

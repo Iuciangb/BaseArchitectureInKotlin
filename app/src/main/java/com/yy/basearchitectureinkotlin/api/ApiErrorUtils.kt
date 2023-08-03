@@ -9,7 +9,7 @@ import com.yy.baselibrary.util.ToastUtil
 /**
  * @author YY
  * Created 2022/2/27
- * Description：
+ * Description： Api error handle
  */
 class ApiErrorUtils private constructor() {
     private val TAG = this@ApiErrorUtils.javaClass.simpleName
