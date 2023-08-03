@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="text_day_sunday">星期天</string>
+    <string name="text_day_monday">星期一</string>
+    <string name="text_day_tuesday">星期二</string>
+    <string name="text_day_wednesday">星期三</string>
+    <string name="text_day_thursday">星期四</string>
+    <string name="text_day_friday">星期五</string>
+    <string name="text_day_saturday">星期六</string>
+    <string name="text_loading">Loading..</string>
+    <string name="text_alert">提示</string>
+    <string name="text_confirm">确定</string>
+    <string name="text_save_image_success">图片储存成功</string>
+
+    <string name="toast_function_not_open">尚未开放</string>
+</resources>

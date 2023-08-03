@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="NotOpenAlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">#db5201</item>
+        <item name="android:colorPrimary">#db5201</item>
+        <item name="android:colorAccent">#db5201</item>
+<!--        <item name="android:windowBackground">#000000</item>-->
+    </style>
+
+    <style name="DialogFragmentFullScreenTheme">
+        <item name="android:windowNoTitle">true</item>
+        <item name="android:windowFullscreen">false</item>
+        <item name="android:windowIsFloating">false</item>
+    </style>
+</resources>
