@@ -13,7 +13,7 @@ class Logger {
         private val TAG = Logger::class.java.simpleName
         private const val LOGGER_TAG = "/////"
         private const val SYMBOL_COLON = ":"
-        private const val ROOT_PACKAGE = "com.yy.houserent"
+        private const val ROOT_PACKAGE = "com.yy.basearchitectureinkotlin"
 
         fun d(message: Int) {
             d(message.toString() + "")
@@ -23,7 +23,7 @@ class Logger {
             if (TextUtils.isEmpty(message)) {
                 return
             }
-            Log.d(LOGGER_TAG, getTargetStackTraceElement().toString() + message)
+            Log.d(LOGGER_TAG, getTargetStackTraceElement() + message)
         }
 
         fun w(message: Int) {
@@ -34,7 +34,7 @@ class Logger {
             if (TextUtils.isEmpty(message)) {
                 return
             }
-            Log.w(LOGGER_TAG, message!!)
+            Log.w(LOGGER_TAG, getTargetStackTraceElement() + message)
         }
 
         fun i(message: Int) {
@@ -45,7 +45,7 @@ class Logger {
             if (TextUtils.isEmpty(message)) {
                 return
             }
-            Log.i(LOGGER_TAG, message!!)
+            Log.i(LOGGER_TAG, getTargetStackTraceElement() + message)
         }
 
         fun v(message: Int) {
@@ -56,7 +56,7 @@ class Logger {
             if (TextUtils.isEmpty(message)) {
                 return
             }
-            Log.v(LOGGER_TAG, message!!)
+            Log.v(LOGGER_TAG, getTargetStackTraceElement() + message)
         }
 
         fun e(message: Int) {
@@ -67,11 +67,10 @@ class Logger {
             if (TextUtils.isEmpty(message)) {
                 return
             }
-            Log.e(LOGGER_TAG, getTargetStackTraceElement().toString() + message)
+            Log.e(LOGGER_TAG, getTargetStackTraceElement() + message)
         }
 
-        private fun getTargetStackTraceElement(): StringBuilder {
-            // find the target invoked method
+        private fun getTargetStackTraceElement(): String {
             val stackTraceMessage = StringBuilder()
             val stackTrace = Thread.currentThread().stackTrace
             for (stackTraceElement in stackTrace) {
@@ -82,11 +81,16 @@ class Logger {
                     }
                     stackTraceMessage.insert(
                         0,
-                        """$className$SYMBOL_COLON${stackTraceElement.lineNumber}	${stackTraceElement.methodName}"""
+                        String.format(
+                            "%s:%d:%s",
+                            stackTraceElement.className,
+                            stackTraceElement.lineNumber,
+                            stackTraceElement.methodName
+                        ) + "\n"
                     )
                 }
             }
-            return stackTraceMessage
+            return stackTraceMessage.toString()
         }
     }
 }
