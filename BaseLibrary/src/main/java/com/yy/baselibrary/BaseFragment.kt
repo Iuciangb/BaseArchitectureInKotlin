@@ -113,7 +113,7 @@ open class BaseFragment : Fragment() {
     /**
      * override用以儲存state
      */
-    protected fun onSavedState(outState: Bundle?) {}
+     open fun onSavedState(outState: Bundle?) {}
 
     private fun restoreStateFromArguments(): Boolean {
         val bundle = arguments
@@ -140,7 +140,7 @@ open class BaseFragment : Fragment() {
      *
      * @param savedInstanceState
      */
-    protected fun onRestoreState(savedInstanceState: Bundle?) {}
+    open fun onRestoreState(savedInstanceState: Bundle?) {}
 
     fun dispatchTouchEvent(event: MotionEvent): Boolean {
         if (event.action == MotionEvent.ACTION_DOWN) {
